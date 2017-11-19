@@ -3,13 +3,13 @@ def popular_words(filename):
     popular_words_list = []
     popularity_list_word_only = []
     try :
-        file = open(filename)
-        for line in file:
-            for word in line.split():
-                if word not in popular_words_dict:
-                    popular_words_dict[word] = 1
-                else:
-                    popular_words_dict[word] += 1   
+        with open(filename) as file:
+            for line in file:
+                for word in line.split():
+                    if word not in popular_words_dict:
+                        popular_words_dict[word] = 1
+                    else:
+                        popular_words_dict[word] += 1   
                     
         for key in popular_words_dict:
             word_popularity = key, popular_words_dict[key]
