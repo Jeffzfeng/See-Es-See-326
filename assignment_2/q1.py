@@ -5,8 +5,6 @@ PROFILE_FUNCTIONS = True
 global PROFILE_RESULTS
 PROFILE_RESULTS = {}
 
-
-
 def profile (func):
     if(PROFILE_FUNCTIONS == True):
         def function_wrapper(*args, **kwargs):
@@ -29,18 +27,10 @@ def profile (func):
                 PROFILE_RESULTS[curr_func_name] = (duration, 1)
         return function_wrapper
     else:
-        return
+        return func
     
-#Testing the above code here
+#test function for q1
 @profile
-def printme(message):
-	print message
-
-@profile 
-def add_nums(a, b):
-	print a + b
-
-@profile 
 def countdown(num):
     if num == 1:
         print num
@@ -49,10 +39,4 @@ def countdown(num):
         print num
         return countdown(num-1)    
         
-if __name__ == "__main__":
-    print "in main"
-    countdown(15)
-    printme('hello world')
-    add_nums(1,2)
-    add_nums(50, 30)
-    print PROFILE_RESULTS
+

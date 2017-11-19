@@ -1,4 +1,4 @@
-def popular_words(filename):
+def find_popular(filename):
     popular_words_dict = {}
     popular_words_list = []
     popularity_list_word_only = []
@@ -24,9 +24,3 @@ def popular_words(filename):
 
     except :
         print 'Something went wrong'
-
-
-if __name__ == "__main__":
-    print "in main"    
-    new_dict = popular_words('cool')
-    print new_dict
